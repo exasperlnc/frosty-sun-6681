@@ -70,4 +70,20 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+
+  def test_data
+    @hospital_1 = Hospital.create(name: "Grey Sloan Memorial Hospital")
+
+    @doctor_1 = @hospital_1.doctors.create(name: "Meredith Grey", specialty: "Drama", university: "Somewhere Cool" )
+    @doctor_2 = @hospital_1.doctors.create(name: "Gwen Stefani", specialty: "General Surgeon", university: "UT Austin")
+    
+    @patient_1 = Patient.create(name: "Logan", age: 19)
+    @patient_2 = Patient.create(name: "James Franco", age: 43)
+    @patient_3 = Patient.create(name: "Jimmy Fallon", age: 14)
+
+    @DoctorPatient_1 = DoctorPatient.create(doctor: @doctor_1, patient: @patient_1)
+    @DoctorPatient_2 = DoctorPatient.create(doctor: @doctor_1, patient: @patient_2)
+    @DoctorPatient_3 = DoctorPatient.create(doctor: @doctor_2, patient: @patient_2)
+    @DoctorPatient_4 = DoctorPatient.create(doctor: @doctor_2, patient: @patient_3)
+  end
 end
