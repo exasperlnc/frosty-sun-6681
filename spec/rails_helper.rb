@@ -73,9 +73,11 @@ RSpec.configure do |config|
 
   def test_data
     @hospital_1 = Hospital.create(name: "Grey Sloan Memorial Hospital")
+    @hospital_2 = Hospital.create(name: "Made Up")
 
     @doctor_1 = @hospital_1.doctors.create(name: "Meredith Grey", specialty: "Drama", university: "Somewhere Cool" )
     @doctor_2 = @hospital_1.doctors.create(name: "Gwen Stefani", specialty: "General Surgeon", university: "UT Austin")
+    @doctor_3 = @hospital_2.doctors.create(name: "Nicki Minaj", specialty: "Surgeon General", university: "BYU")
     
     @patient_1 = Patient.create(name: "Logan", age: 19)
     @patient_2 = Patient.create(name: "James Franco", age: 43)
