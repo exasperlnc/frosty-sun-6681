@@ -3,5 +3,5 @@
 <%= @doctor.university%><br>
 <%= @doctor.hospital.name%><br>
 <% @doctor.patients.each do |patient| %>
-  <%= patient.name%> <%= link_to "Remove #{patient.name}", "/doctor/doctor_patient/#{}" %><br>
+  <%= patient.name%> <%= link_to "Remove #{patient.name}", "/doctor/doctor_patient/#{@doctor.find_doctor_patient_by_patient(patient.id).first}?doctor_id=#{ @doctor.id }", method: :delete %><br>
 <% end %>

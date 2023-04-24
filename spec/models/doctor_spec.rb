@@ -12,9 +12,9 @@ RSpec.describe Doctor do
 
   describe "#instance methods" do
     it 'finds doctor patient' do
-      expect(@doctor_1.find_doctor_patient_by_patient(@patient_1.id)).to eq([@doctorpatient_1])
+      expect(@doctor_1.find_doctor_patient_by_patient(@patient_1.id)).to eq([@doctorpatient_1.id])
+      expect(@doctor_1.find_doctor_patient_by_patient(@patient_2.id)).to eq([@doctorpatient_2.id])
+      expect(@doctor_2.find_doctor_patient_by_patient(@patient_3.id)).to eq([@doctorpatient_4.id])
     end
-    
   end
-
 end
