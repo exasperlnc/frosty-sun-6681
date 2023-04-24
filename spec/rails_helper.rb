@@ -81,9 +81,9 @@ RSpec.configure do |config|
     @patient_2 = Patient.create(name: "James Franco", age: 43)
     @patient_3 = Patient.create(name: "Jimmy Fallon", age: 14)
 
-    @DoctorPatient_1 = DoctorPatient.create(doctor: @doctor_1, patient: @patient_1)
-    @DoctorPatient_2 = DoctorPatient.create(doctor: @doctor_1, patient: @patient_2)
-    @DoctorPatient_3 = DoctorPatient.create(doctor: @doctor_2, patient: @patient_2)
-    @DoctorPatient_4 = DoctorPatient.create(doctor: @doctor_2, patient: @patient_3)
+    @doctorpatient_1 = DoctorPatient.create(doctor: @doctor_1, patient: @patient_1)
+    @doctorpatient_2 = DoctorPatient.create(doctor: @doctor_1, patient: @patient_2)
+    @doctorpatient_3 = DoctorPatient.create(doctor: @doctor_2, patient: @patient_2)
+    @doctorpatient_4 = DoctorPatient.create(doctor: @doctor_2, patient: @patient_3)
   end
 end

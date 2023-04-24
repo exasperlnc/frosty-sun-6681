@@ -1,7 +1,7 @@
 <%= @doctor.name%><br>
 <%= @doctor.specialty%><br>
 <%= @doctor.university%><br>
-<%= @doctor.hospital%><br>
+<%= @doctor.hospital.name%><br>
 <% @doctor.patients.each do |patient| %>
-  <%= patient.name%><br>
+  <%= patient.name%> <%= link_to "Remove #{patient.name}", "/doctor/doctor_patient/#{}" %><br>
 <% end %>
