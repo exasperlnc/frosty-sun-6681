@@ -23,9 +23,12 @@ RSpec.describe "doctor show page" do
   end
 
   it 'deletes doctor patient' do
-    expect(page).to have_content("#{@patient_1.name}")
-    click_link "Remove #{@patient_1.name}"
+    expect(page).to have_content("#{@patient_2.name}")
+    click_link "Remove #{@patient_2.name}"
 
-    expect(page).to_not have_content("#{@patient_1.name}")
+    expect(page).to_not have_content("#{@patient_2.name}")
+
+    visit doctor_path(@doctor_2)
+    expect(page).to have_content("#{@patient_2.name}")
   end
 end
